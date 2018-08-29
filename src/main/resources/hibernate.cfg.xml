@@ -46,8 +46,5 @@
         <!-- 将Session与线程绑定=> 只有配置了该配置,才能使用getCurrentSession -->
         <property name="hibernate.current_session_context_class">thread</property>
 
-        <!-- 自动创建表扫描的实体 -->
-        <mapping class="com.zhang.hibernate.demo.entity.UserDO"/>
-
     </session-factory>
 </hibernate-configuration>

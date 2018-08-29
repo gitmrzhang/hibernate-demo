@@ -1,5 +1,6 @@
 package com.zhang.hibernate.demo;
 
+import com.github.fluent.hibernate.cfg.scanner.EntityScanner;
 import com.zhang.hibernate.demo.entity.UserDO;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,6 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.service.ServiceRegistry;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author zgj
@@ -19,10 +21,16 @@ public class Application {
     public static void main(String[] args) {
         // 创建工厂
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().configure().build();
-        SessionFactory sessionFactory = new MetadataSources(serviceRegistry).getMetadataBuilder().build().getSessionFactoryBuilder().build();
+
+        List<Class<?>> entityEntity = EntityScanner.scanPackages("com.zhang.hibernate.demo.entity").result();
+        MetadataSources metadata = new MetadataSources(serviceRegistry);
+        for (Class<?> clazz : entityEntity) {
+            metadata.addAnnotatedClass(clazz);
+        }
+        SessionFactory sessionFactory = metadata.getMetadataBuilder().build().getSessionFactoryBuilder().build();
         UserDO userDO = new UserDO();
         userDO.setCreateTime(new Date());
-        userDO.setName("Mr zhang");
+        userDO.setName("Mr zhang3");
         userDO.setSex((byte) 1);
         Session session = sessionFactory.getCurrentSession();
         Transaction tx = session.beginTransaction();
