@@ -9,3 +9,5 @@
 ### 配置说明
 
 1. hibernate的配置在 hibernate.cfg.xml中,修改相应的数据库连接URL
+
+### 项目说明
