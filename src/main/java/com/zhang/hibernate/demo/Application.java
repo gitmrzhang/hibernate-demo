@@ -28,15 +28,15 @@ public class Application {
             metadata.addAnnotatedClass(clazz);
         }
         SessionFactory sessionFactory = metadata.getMetadataBuilder().build().getSessionFactoryBuilder().build();
-        UserDO userDO = new UserDO();
-        userDO.setCreateTime(new Date());
-        userDO.setName("Mr zhang3");
-        userDO.setSex((byte) 1);
-        Session session = sessionFactory.getCurrentSession();
-        Transaction tx = session.beginTransaction();
-        session.save(userDO);
-        tx.commit();
-        session.close();
+//        UserDO userDO = new UserDO();
+//        userDO.setCreateTime(new Date());
+//        userDO.setName("Mr zhang3");
+//        userDO.setSex((byte) 1);
+//        Session session = sessionFactory.getCurrentSession();
+//        Transaction tx = session.beginTransaction();
+//        session.save(userDO);
+//        tx.commit();
+//        session.close();
         sessionFactory.close();
     }
 }

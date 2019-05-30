@@ -25,6 +25,8 @@ public class Score {
     private Date createTime;
     @Column
     private Date modifyTime;
+    @Column
+    private String newColumn;
 
     public Long getId() {
         return id;
@@ -56,5 +58,13 @@ public class Score {
 
     public void setModifyTime(Date modifyTime) {
         this.modifyTime = modifyTime;
+    }
+
+    public String getNewColumn() {
+        return newColumn;
+    }
+
+    public void setNewColumn(String newColumn) {
+        this.newColumn = newColumn;
     }
 }

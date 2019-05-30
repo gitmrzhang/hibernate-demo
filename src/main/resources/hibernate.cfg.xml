@@ -7,16 +7,16 @@
     <session-factory>
         <!-- property 元素用于配置Hibernate中的属性 键:值 -->
         <!-- hibernate.connection.driver_class : 连接数据库的驱动  -->
-        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
 
         <!-- hibernate.connection.username : 连接数据库的用户名 -->
         <property name="hibernate.connection.username">root</property>
 
         <!-- hibernate.connection.password : 连接数据库的密码 -->
-        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.password">rootroot</property>
 
         <!-- hibernate.connection.url : 连接数据库的地址,路径 -->
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/zhang_test?serverTimezone=GMT%2B8
+        <property name="hibernate.connection.url">jdbc:sqlserver://localhost:3306/zhang_test?serverTimezone=GMT%2B8
         </property>
 
         <!-- show_sql: 操作数据库时,会 向控制台打印sql语句 -->
@@ -38,7 +38,7 @@
         <!-- 数据库方言配置
          org.hibernate.dialect.MySQLDialect (选择最短的)
          -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2012Dialect</property>
 
         <!-- hibernate.connection.autocommit: 事务自动提交  -->
         <property name="hibernate.connection.autocommit">true</property>
