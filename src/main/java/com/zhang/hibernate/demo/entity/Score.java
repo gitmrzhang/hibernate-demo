@@ -1,5 +1,6 @@
 package com.zhang.hibernate.demo.entity;
 
+import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -12,6 +13,7 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "score")
+@Data
 public class Score {
     @Id
     @GeneratedValue(generator = "increment")
@@ -25,36 +27,4 @@ public class Score {
     private Date createTime;
     @Column
     private Date modifyTime;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getModifyTime() {
-        return modifyTime;
-    }
-
-    public void setModifyTime(Date modifyTime) {
-        this.modifyTime = modifyTime;
-    }
 }
